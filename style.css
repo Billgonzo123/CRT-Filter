@@ -99,3 +99,24 @@
     filter: brightness(1.1) saturate(140%);
 }
 
+
+/*CONTROL CSS*/
+#controlContainer {
+  position: absolute;
+  width: 100%;
+  isolation: isolate;
+  border-top: 2px solid black;
+  padding: 10px;
+  background-color: rgb(116, 116, 116);
+z-index: 999999;
+}
+
+.btn{
+  color: black;
+  font-size: 20px;
+  z-index: 999999;
+}
+
+.btn:hover{
+  color: rgb(88, 76, 76);
+}
