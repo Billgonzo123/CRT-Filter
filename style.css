@@ -90,7 +90,8 @@
   height: 100%;
   position: absolute;
   background: url(./assets/img/image.png);
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 70%;
 }
 
 .crt {
