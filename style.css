@@ -2,8 +2,7 @@
 
 .scanlines {
     z-index: 3;
-
-    opacity: .3;
+    opacity: .5;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -13,17 +12,16 @@
 /* Red phosphor made of magenta and yellow */
 .RY {
   z-index: 2;
-  background: url(RY.png);
+  background: url(./assets/img/RY.png);
   mix-blend-mode:darken;
 }
 .RM {
-  background: url(RM.png);
+  background: url(./assets/img/RM.png);
   mix-blend-mode: multiply;
 }
 .R-bloom {
-  opacity: .5;
   z-index: 4;
-  background: url(R.png);
+  background: url(./assets/img/R.png);
   mix-blend-mode: darken;
    filter: blur(1px) saturate(10);
    
@@ -31,64 +29,68 @@
 
 /* Green phosphor made of yellow and cyan */
 .GC {
-  background: url(G.png);
+  background: url(./assets/img/G.png);
   mix-blend-mode:darken;
 }
 .GY {
-  background: url(G.png);
+  background: url(./assets/img/G.png);
   mix-blend-mode: multiply;
 }
 .G-bloom {
-  opacity: .5;
+
   z-index: 4;
-  background: url(G.png);
+  background: url(./assets/img/G.png);
   mix-blend-mode: darken;
    filter: blur(1px) saturate(10);
-   
 }
 
 /* Blue phosphor made of cyan and magenta */
 .BM {
   z-index: 2;
-  background: url(BM.png);
+  background: url(./assets/img/BM.png);
   mix-blend-mode:darken;
   
 }
 .BC {
   z-index: 3;
-  background: url(BC.png);
+  background: url(./assets/img/BC.png);
   mix-blend-mode: multiply;
 }
 .B-bloom {
-  opacity: .5;
+ 
   z-index: 4;
-  background: url(B.png);
+  background: url(./assets/img/B.png);
   mix-blend-mode: darken;
    filter: blur(1px) saturate(10);
    
 }
 
+.bloom {
+  opacity: .5;
+}
 
 .mask {
     z-index: 1;
-    opacity: .1;
+    opacity: .4;
     position: absolute;
     width: 100%;
     height: 100%;
-  background: url(mask.png);
+  background: url(./assets/img/mask.png);
 
  /* mix-blend-mode:exclusion;  */
 
 }
 
+.test-image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(./assets/img/image.png);
+  background-attachment: fixed;
+}
+
 .crt {
 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: url(image.png);
-    background-attachment: fixed;
-    background-attachment: fixed;  
-  
+    filter: brightness(1.1) saturate(140%);
 }
 
