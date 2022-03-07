@@ -15,11 +15,14 @@
 .RY {
   z-index: 2;
   background: url(./assets/img/RY.png);
-  mix-blend-mode:darken;
+  mix-blend-mode: darken;
+  box-shadow: 1px 1px 1px 1px yellow;
 }
 .RM {
   background: url(./assets/img/RM.png);
   mix-blend-mode: multiply;
+  
+  box-shadow: 1px 1px 1px 1px magenta;
 }
 .R-bloom {
   z-index: 4;
@@ -31,12 +34,14 @@
 
 /* Green phosphor made of yellow and cyan */
 .GC {
-  background: url(./assets/img/G.png);
+  background: url(./assets/img/GC.png);
   mix-blend-mode:darken;
+  box-shadow: 1px 1px 1px 1px cyan;
 }
 .GY {
-  background: url(./assets/img/G.png);
+  background: url(./assets/img/GY.png);
   mix-blend-mode: multiply;
+  box-shadow: 1px 1px 1px 1px yellow;
 }
 .G-bloom {
 
@@ -50,12 +55,14 @@
 .BM {
   z-index: 2;
   background: url(./assets/img/BM.png);
+  box-shadow: 1px 1px 1px 1px magenta;
   mix-blend-mode:darken;
   
 }
 .BC {
   z-index: 3;
   background: url(./assets/img/BC.png);
+  box-shadow: 1px 1px 1px 1px cyan;
   mix-blend-mode: multiply;
 }
 .B-bloom {
