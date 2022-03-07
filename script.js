@@ -72,11 +72,24 @@ function togglePhosphors(color) {
     Object.values(elements).forEach(e => {
         f = e.className.split(' ')[1];
         console.log(f)
-        if (document.querySelector(`.${f}`).style.filter == '') {
-            document.querySelector(`.${f}`).style.filter = 'brightness(0%) saturate(0%)';
+        if (document.querySelector(`.${f}`).style.background == '') {
+            document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', 'normal');
+            switch (color) {
+                case 'red':
+                    document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
+                   
+                    break;
+                case 'green':
+                    document.querySelector(`.${f}`).style.background = 'url(./assets/img/Green.png)'
+                    break;
+                case 'blue':
+                    document.querySelector(`.${f}`).style.background = 'url(./assets/img/Blue.png)'
+                    break;
+            }
             event.target.style.color = 'red'
         } else {
-            document.querySelector(`.${f}`).style.filter = '';
+            document.querySelector(`.${f}`).style.background = '';
+            document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', '');
             event.target.style.color = 'black'
         }
     })
