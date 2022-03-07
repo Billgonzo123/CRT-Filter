@@ -26,6 +26,7 @@
   z-index: 4;
   background: url(./assets/img/R.png);
   mix-blend-mode: darken;
+  filter: blur(1px) saturate(10);
 }
 
 /* Green phosphor made of yellow and cyan */
@@ -38,7 +39,6 @@
   mix-blend-mode: multiply;
 }
 .G-bloom {
-
   z-index: 4;
   background: url(./assets/img/G.png);
   mix-blend-mode: darken;
@@ -50,25 +50,21 @@
   z-index: 2;
   background: url(./assets/img/BM.png);
   mix-blend-mode:darken;
-  
 }
 .BC {
   z-index: 3;
   background: url(./assets/img/BC.png);
   mix-blend-mode: multiply;
 }
-
 .B-bloom {
- 
   z-index: 4;
   background: url(./assets/img/B.png);
-  mix-blend-mode: darken;
+  mix-blend-mode:darken;
    filter: blur(1px) saturate(10);
-   
 }
 
 .bloom {
-  opacity: .2;
+  opacity: 0;
 }
 
 .mask {
@@ -101,15 +97,13 @@
   position: absolute;
   width: 100%;
   isolation: isolate;
-  border-top: 2px solid black;
-  padding: 10px;
-  background-color: rgb(116, 116, 116);
 z-index: 999999;
 }
 
 .btn{
   color: black;
-  font-size: 20px;
+  font-size: 1vw;
+  width:10vw;
   z-index: 999999;
 }
 
