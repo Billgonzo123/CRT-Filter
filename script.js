@@ -18,8 +18,11 @@ function controlClickHandler(event) {
             togglePhosphors('blue');
             break;
         case 'toggle-mask':
-            togglePhosphors('mask');
+            toggleDisplay('mask');
             break;
+        case 'opacity':
+            toggleOpacity();
+        break;
     };
 }
 
@@ -34,7 +37,7 @@ function toggleAll() {
     }
 }
 
-function togglePhosphors(color) {
+function toggleDisplay(color) {
     const phosphor = document.querySelector(`.${color}`);
     if (phosphor.style.display == 'none') {
         phosphor.style.display = 'block'
@@ -44,6 +47,40 @@ function togglePhosphors(color) {
         event.target.style.color = 'red'
     }
 }
+
+function togglePhosphors(color) {
+    const elements = document.querySelector(`.${color}`).children;
+    console.log(Object.values(elements))
+    Object.values(elements).forEach(e => {
+        f = e.className.split(' ')[1];
+        console.log(f)
+        if (document.querySelector(`.${f}`).style.filter == '') {
+            document.querySelector(`.${f}`).style.filter = 'brightness(0%) saturate(0%)';
+            event.target.style.color = 'red'
+        } else {
+            document.querySelector(`.${f}`).style.filter = '';
+            event.target.style.color = 'black'
+        }
+    })
+}
+
+function toggleOpacity() {
+    const elements = document.querySelectorAll('.scanlines');
+    console.log(Object.values(elements))
+
+    Object.values(elements).forEach(e => {
+        f = e.className.split(' ')[1];
+        console.log(f)
+        if (document.querySelector(`.${f}`).style.opacity == '1') {
+            document.querySelector(`.${f}`).style.opacity = ''
+            event.target.style.color = 'black'
+        } else {
+            document.querySelector(`.${f}`).style.opacity = '1'
+            event.target.style.color = 'red'
+        }
+    })
+}
+
 
 
 controlContainer.addEventListener('mouseup', controlClickHandler)
