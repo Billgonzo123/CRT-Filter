@@ -31,7 +31,7 @@
 /* Green phosphor made of yellow and cyan */
 .GY {
   background: url(./assets/img/GY.png);
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
 }
 .GC {
   background: url(./assets/img/GC.png);
@@ -58,8 +58,6 @@
   z-index: 4;
   background: url(./assets/img/B.png);
   mix-blend-mode:darken;
-  
-   
 }
 
 .bloom {

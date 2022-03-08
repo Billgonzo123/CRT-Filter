@@ -54,6 +54,7 @@ function toggleAll() {
     } else {
         crtBlur.className = 'test-image'
         phosphorsContainer.style.display = 'none'
+     
         event.target.style.color = 'red'
     }
 }
@@ -76,7 +77,7 @@ function togglePhosphors(color) {
         f = e.className.split(' ')[1];
         console.log(f)
         if (document.querySelector(`.${f}`).style.background == '') {
-            document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', 'normal');
+            document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', 'darken');
             switch (color) {
                 case 'red':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
