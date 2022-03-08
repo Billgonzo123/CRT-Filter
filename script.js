@@ -100,13 +100,15 @@ function togglePhosphors(color) {
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Blue.png)'
                     break;
             }
-            document.querySelector(`.${f}`).style.backgroundSize = `${size}px ${size}px`
+           
             event.target.style.color = 'red'
         } else {
+            
             document.querySelector(`.${f}`).style.background = '';
             document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', '');
             event.target.style.color = 'black'
         }
+        setSize();
     })
 }
 
@@ -188,7 +190,6 @@ function setSize() {
     const mask = document.querySelector('.mask');
     const maskBtn = document.querySelector('#opacity-mask');
     mask.style.backgroundSize = `${size}px ${size}px`;
-
 
 }
 
