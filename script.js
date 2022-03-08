@@ -2,7 +2,7 @@ const controlContainer = document.getElementById('controlContainer');
 const phosphorsContainer = document.querySelector('.phosphorsContainer');
 phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
-let opacityMask = .7;
+let opacityMask = .9;
 let testImageId = 0;
 
 
@@ -77,7 +77,7 @@ function togglePhosphors(color) {
             switch (color) {
                 case 'red':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
-                   
+
                     break;
                 case 'green':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Green.png)'
@@ -100,9 +100,14 @@ function resetOpacity() {
     Object.values(elements).forEach(e => {
         f = e.className.split(' ')[1];
         document.querySelector(`.${f}`).style.opacity = ''
-        document.querySelector('#opacitySet').innerHTML = 'Change Opacity'
+        document.querySelector('#opacitySet').innerHTML = 'Phosphor Opacity'
         opacityValue = .9;
     })
+    const mask = document.querySelector('.mask');
+    const maskBtn = document.querySelector('#opacity-mask');
+    mask.style.opacity = '';
+    maskBtn.innerHTML = 'Mask Opacity';
+    opacityMask = .9;
 }
 
 function changeOpacity() {
@@ -114,10 +119,10 @@ function changeOpacity() {
         if (opacityValue > 1) {
             opacityValue = 0;
             document.querySelector(`.${f}`).style.opacity = `${opacityValue}`;
-            event.target.innerHTML = `Change Opacity ${opacityValue}`
+            event.target.innerHTML = `Phosphor Opacity ${opacityValue}`
         } else {
             document.querySelector(`.${f}`).style.opacity = `${opacityValue}`;
-            event.target.innerHTML = `Change Opacity ${opacityValue}`
+            event.target.innerHTML = `Phosphor Opacity ${opacityValue}`
         }
     })
 }
@@ -142,12 +147,16 @@ function maskOpacity() {
 }
 
 function imageSet() {
-    (testImageId === 3) ? testImageId = 0 : testImageId += 1;
+    (testImageId === 4) ? testImageId = 0 : testImageId += 1;
 
     console.log(testImageId);
     const el = document.querySelector('.test-image');
 
-    el.style.background = `url(./assets/img/image${testImageId}.png) no-repeat center/100vw`
+    el.style.background = `url(./assets/img/image${testImageId}.png) no-repeat center/100vw`;
+    
+    if (testImageId === 4) {
+        el.style.background = `url(./assets/img/video.gif) no-repeat center/100vw`;
+    }
 
 }
 
