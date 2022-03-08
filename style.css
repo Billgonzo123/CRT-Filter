@@ -99,13 +99,18 @@
   width: 100%;
   isolation: isolate;
 z-index: 999999;
+
+display: flex;
+flex-flow: row wrap;
+justify-content: flex-start;
 }
 
 .btn{
+  margin-right: 5px;
   color: black;
   font-size: 1vw;
-  width:8.5vw;
-
+  width:8vw;
+  height: 4vw;
   z-index: 999999;
 }
 
