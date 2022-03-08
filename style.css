@@ -87,6 +87,11 @@
     filter:  brightness(1.1) saturate(140%) ;
 }
 
+/* this must come after the mask and the phosphors to render new bk size */
+.scanlines, .mask{
+  background-size: 12px 12px;
+}
+
 
 /*CONTROL CSS*/
 #controlContainer {
@@ -99,7 +104,8 @@ z-index: 999999;
 .btn{
   color: black;
   font-size: 1vw;
-  width:10vw;
+  width:8.5vw;
+
   z-index: 999999;
 }
 

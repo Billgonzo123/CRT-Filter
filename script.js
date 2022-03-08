@@ -4,6 +4,7 @@ phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
 let opacityMask = .9;
 let testImageId = 0;
+let size = 12;
 
 
 function controlClickHandler(event) {
@@ -33,7 +34,7 @@ function controlClickHandler(event) {
             maskOpacity();
             break;
         case 'opacity':
-            resetOpacity();
+            resetAll();
             break;
         case 'opacitySet':
             changeOpacity();
@@ -41,6 +42,15 @@ function controlClickHandler(event) {
         case 'imageSet':
             imageSet();
             break;
+        case 'sizeUp':
+            size++;
+            setSize()
+            break;
+        case 'sizeDown':
+            size--;
+            setSize()
+            break;
+
     };
 }
 
@@ -54,7 +64,7 @@ function toggleAll() {
     } else {
         crtBlur.className = 'test-image'
         phosphorsContainer.style.display = 'none'
-     
+
         event.target.style.color = 'red'
     }
 }
@@ -81,7 +91,7 @@ function togglePhosphors(color) {
             switch (color) {
                 case 'red':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
-
+                  
                     break;
                 case 'green':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Green.png)'
@@ -90,6 +100,7 @@ function togglePhosphors(color) {
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Blue.png)'
                     break;
             }
+            document.querySelector(`.${f}`).style.backgroundSize = `${size}px ${size}px`
             event.target.style.color = 'red'
         } else {
             document.querySelector(`.${f}`).style.background = '';
@@ -99,7 +110,7 @@ function togglePhosphors(color) {
     })
 }
 
-function resetOpacity() {
+function resetAll() {
     const elements = document.querySelectorAll('.scanlines');
     Object.values(elements).forEach(e => {
         f = e.className.split(' ')[1];
@@ -112,6 +123,8 @@ function resetOpacity() {
     mask.style.opacity = '';
     maskBtn.innerHTML = 'Mask Opacity';
     opacityMask = .9;
+    size = 12;
+    setSize();
 }
 
 function changeOpacity() {
@@ -157,10 +170,25 @@ function imageSet() {
     const el = document.querySelector('.test-image');
 
     el.style.background = `url(./assets/img/image${testImageId}.png) no-repeat center/100vw`;
-    
+
     if (testImageId >= 4) {
         el.style.background = `url(./assets/img/video${testImageId}.gif) no-repeat center/100vw`;
     }
+
+}
+
+function setSize() {
+    const elements = document.querySelectorAll('.scanlines');
+    Object.values(elements).forEach(e => {
+        f = e.className.split(' ')[1];
+        document.querySelector(`.${f}`).style.backgroundSize = `${size}px ${size}px`
+        document.querySelector('#opacitySet').innerHTML = 'Phosphor Opacity'
+
+    })
+    const mask = document.querySelector('.mask');
+    const maskBtn = document.querySelector('#opacity-mask');
+    mask.style.backgroundSize = `${size}px ${size}px`;
+
 
 }
 
