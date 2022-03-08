@@ -150,15 +150,15 @@ function maskOpacity() {
 }
 
 function imageSet() {
-    (testImageId === 4) ? testImageId = 0 : testImageId += 1;
+    (testImageId === 5) ? testImageId = 0 : testImageId += 1;
 
     console.log(testImageId);
     const el = document.querySelector('.test-image');
 
     el.style.background = `url(./assets/img/image${testImageId}.png) no-repeat center/100vw`;
     
-    if (testImageId === 4) {
-        el.style.background = `url(./assets/img/video.gif) no-repeat center/100vw`;
+    if (testImageId >= 4) {
+        el.style.background = `url(./assets/img/video${testImageId}.gif) no-repeat center/100vw`;
     }
 
 }
