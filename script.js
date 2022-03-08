@@ -46,10 +46,13 @@ function controlClickHandler(event) {
 
 
 function toggleAll() {
+    const crtBlur = document.querySelector('.test-image')
     if (phosphorsContainer.style.display == 'none') {
         phosphorsContainer.style.display = 'block'
         event.target.style.color = 'black'
+        crtBlur.className = 'test-image crt'
     } else {
+        crtBlur.className = 'test-image'
         phosphorsContainer.style.display = 'none'
         event.target.style.color = 'red'
     }
