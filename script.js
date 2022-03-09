@@ -21,12 +21,6 @@ function controlClickHandler(event) {
         case 'toggle-b':
             togglePhosphors('blue');
             break;
-        case 'toggle-bloom':
-            toggleDisplay('R-bloom');
-            toggleDisplay('G-bloom');
-            toggleDisplay('B-bloom');
-
-            break;
         case 'toggle-mask':
             toggleDisplay('mask');
             break;
