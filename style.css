@@ -61,7 +61,7 @@
 }
 
 .bloom {
-  filter: blur(1px) saturate(10);
+  filter: blur(0px) saturate(10);
 }
 
 .mask {
