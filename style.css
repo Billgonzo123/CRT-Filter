@@ -30,20 +30,15 @@
   mix-blend-mode:darken;
 }
 
-.bloom {
-  filter: blur(1px) saturate(10);
-}
-
 .mask {
     z-index: 1;
-    opacity: .6;
+    opacity: .3;
     position: absolute;
     top: 0;
     right: 0;
     width: 110%;
     height: 110%;
   background: url(./assets/img/mask.png);
-
 }
 
 .test-image{
