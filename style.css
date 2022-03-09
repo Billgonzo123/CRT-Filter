@@ -12,48 +12,18 @@
     background-attachment: fixed;
 }
 
-/* Red phosphor made of magenta and yellow */
-.RM {
-  background: url(./assets/img/RM.png);
-  mix-blend-mode: multiply;
-}
-.RY {
-  z-index: 2;
-  background: url(./assets/img/RY.png);
-  mix-blend-mode:darken;
-}
 .R-bloom {
   z-index: 4;
   background: url(./assets/img/R.png);
   mix-blend-mode: darken;
 }
 
-/* Green phosphor made of yellow and cyan */
-.GY {
-  background: url(./assets/img/GY.png);
-  mix-blend-mode: darken;
-}
-.GC {
-  background: url(./assets/img/GC.png);
-  mix-blend-mode:darken;
-}
 .G-bloom {
   z-index: 4;
   background: url(./assets/img/G.png);
   mix-blend-mode: darken;
 }
 
-/* Blue phosphor made of cyan and magenta */
-.BM {
-  z-index: 2;
-  background: url(./assets/img/BM.png);
-  mix-blend-mode:darken;
-}
-.BC {
-  z-index: 3;
-  background: url(./assets/img/BC.png);
-  mix-blend-mode: multiply;
-}
 .B-bloom {
   z-index: 4;
   background: url(./assets/img/B.png);
@@ -61,7 +31,7 @@
 }
 
 .bloom {
-  filter: blur(0px) saturate(10);
+  filter: blur(1px) saturate(10);
 }
 
 .mask {
