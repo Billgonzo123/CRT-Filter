@@ -35,11 +35,8 @@ function controlClickHandler(event) {
             changeOpacity();
             break;
         case 'type':
-            // togglePhosphors('red');
-            // togglePhosphors('green');
-            // togglePhosphors('blue');
-            toggleDisplay('RGB-bloom');
-            
+            toggleBloom();
+
             break;
         case 'imageSet':
             imageSet();
@@ -193,6 +190,16 @@ function setSize() {
     const maskBtn = document.querySelector('#opacity-mask');
     mask.style.backgroundSize = `${size}px ${size}px`;
 
+}
+
+function toggleBloom() {
+    toggleDisplay('red');
+    toggleDisplay('green');
+    toggleDisplay('blue');
+    toggleDisplay('RGB-bloom');
+
+    const e = document.querySelector(".RGB-bloom");
+    (e.style.display == 'none') ?     event.target.style.color = 'red' :     event.target.style.color = 'black';
 }
 
 

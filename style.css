@@ -17,12 +17,12 @@
 
 /* RGB Bloom allows for a brighter image with blending between phosphors*/
 /* disabled until functional */
-/* .RGB-bloom {
+.RGB-bloom {
   z-index: 4;
-  background: url(./assets/img/RGB2.png);
-  filter: contrast(100) brightness(10)  ;
+  background: url(./assets/img/RGBG.png);
+  filter: contrast(100) brightness(10)  blur(1px);
   mix-blend-mode: darken;
-} */
+}
 
 /* individual phosphors. Enable these for the best phosphor seperation but with darker image */
 .R {
