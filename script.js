@@ -165,7 +165,7 @@ function maskOpacity() {
 }
 
 function imageSet() {
-    (testImageId === 5) ? testImageId = 0 : testImageId += 1;
+    (testImageId === 6) ? testImageId = 0 : testImageId += 1;
 
     console.log(testImageId);
     const el = document.querySelector('.test-image');
