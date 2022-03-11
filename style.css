@@ -12,19 +12,33 @@
     background-attachment: fixed;
 }
 
-.R-bloom {
+/* Do not enable RGB-bloom and  R,G and B at the same time  */
+
+
+/* RGB Bloom allows for a brighter image with blending between phosphors*/
+/* disabled until functional */
+/* .RGB-bloom {
+  z-index: 4;
+  background: url(./assets/img/RGB2.png);
+  filter: contrast(100) brightness(10)  ;
+  mix-blend-mode: darken;
+} */
+
+/* individual phosphors. Enable these for the best phosphor seperation but with darker image */
+.R {
   z-index: 4;
   background: url(./assets/img/R.png);
+  filter:brightness(100);
   mix-blend-mode: darken;
 }
 
-.G-bloom {
+.G {
   z-index: 4;
   background: url(./assets/img/G.png);
   mix-blend-mode: darken;
 }
 
-.B-bloom {
+.B {
   z-index: 4;
   background: url(./assets/img/B.png);
   mix-blend-mode:darken;

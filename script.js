@@ -1,5 +1,6 @@
 const controlContainer = document.getElementById('controlContainer');
 const phosphorsContainer = document.querySelector('.phosphorsContainer');
+const bloom = document.querySelector('.RGB-Bloom')
 phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
 let opacityMask = .9;
@@ -32,6 +33,13 @@ function controlClickHandler(event) {
             break;
         case 'opacitySet':
             changeOpacity();
+            break;
+        case 'type':
+            // togglePhosphors('red');
+            // togglePhosphors('green');
+            // togglePhosphors('blue');
+            toggleDisplay('RGB-bloom');
+            
             break;
         case 'imageSet':
             imageSet();
@@ -85,7 +93,7 @@ function togglePhosphors(color) {
             switch (color) {
                 case 'red':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
-                  
+
                     break;
                 case 'green':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Green.png)'
@@ -94,10 +102,10 @@ function togglePhosphors(color) {
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Blue.png)'
                     break;
             }
-           
+
             event.target.style.color = 'red'
         } else {
-            
+
             document.querySelector(`.${f}`).style.background = '';
             document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', '');
             event.target.style.color = 'black'
@@ -186,6 +194,7 @@ function setSize() {
     mask.style.backgroundSize = `${size}px ${size}px`;
 
 }
+
 
 
 controlContainer.addEventListener('mouseup', controlClickHandler)
