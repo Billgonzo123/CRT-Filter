@@ -11,8 +11,8 @@
 
 <body>
 
-
     <div class="phosphorsContainer">
+        <div class="flicker" style="display: none;"></div>
         <div class="rgb" >
             <div class="scanlines RGB-bloom" style="display: none"> </div>
         </div>
@@ -30,6 +30,7 @@
         </div>
 
         <div class="mask"></div>
+
     </div>
 
 
@@ -45,9 +46,11 @@
         <button id="opacity-mask" class="btn">Mask Opacity</button>
         <button id="opacitySet" class="btn">Phosphor Opacity</button>
         <button id="type" class="btn" style="color: red;">Phosphor Bloom</button>
+        <button id="flicker" class="btn" style=" color: red;">Flicker</button>
         <button id="sizeDown" class="btn">Size -</button>
         <button id="sizeUp" class="btn">Size +</button>
-        <button id="opacity" class="btn">Reset All</button>
+        <button id="reset" class="btn">Reset All</button>
+        <div class="sizeDisplay">Text</div>
 
     </div>
 

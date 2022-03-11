@@ -1,11 +1,13 @@
 const controlContainer = document.getElementById('controlContainer');
 const phosphorsContainer = document.querySelector('.phosphorsContainer');
 const bloom = document.querySelector('.RGB-Bloom')
+const sizeDisplay = document.querySelector('.sizeDisplay');
 phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
 let opacityMask = .9;
 let testImageId = 0;
 let size = 12;
+sizeDisplay.innerHTML = `Dot Size: ${size}`
 
 
 function controlClickHandler(event) {
@@ -28,7 +30,7 @@ function controlClickHandler(event) {
         case 'opacity-mask':
             maskOpacity();
             break;
-        case 'opacity':
+        case 'reset':
             resetAll();
             break;
         case 'opacitySet':
@@ -36,7 +38,9 @@ function controlClickHandler(event) {
             break;
         case 'type':
             toggleBloom();
-
+            break;
+        case 'flicker':
+            toggleDisplay('flicker');
             break;
         case 'imageSet':
             imageSet();
@@ -51,6 +55,8 @@ function controlClickHandler(event) {
             break;
 
     };
+
+    sizeDisplay.textContent = `Dot Size: ${size}`
 }
 
 
@@ -199,7 +205,7 @@ function toggleBloom() {
     toggleDisplay('RGB-bloom');
 
     const e = document.querySelector(".RGB-bloom");
-    (e.style.display == 'none') ?     event.target.style.color = 'red' :     event.target.style.color = 'black';
+    (e.style.display == 'none') ? event.target.style.color = 'red' : event.target.style.color = 'black';
 }
 
 
