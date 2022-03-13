@@ -6,7 +6,8 @@ phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
 let opacityMask = .9;
 let testImageId = 0;
-let size = 12;
+let size = 12 * window.devicePixelRatio;
+setSize();
 sizeDisplay.innerHTML = `Dot Size: ${size}`
 
 
@@ -92,7 +93,7 @@ function togglePhosphors(color) {
         f = e.className.split(' ')[1];
         console.log(f)
         if (document.querySelector(`.${f}`).style.background == '') {
-            document.querySelector(`.${f}`).style.setProperty('mix-blend-mode', 'darken');
+
             switch (color) {
                 case 'red':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
@@ -130,7 +131,7 @@ function resetAll() {
     mask.style.opacity = '';
     maskBtn.innerHTML = 'Mask Opacity';
     opacityMask = .9;
-    size = 12;
+    size = 12 * window.devicePixelRatio;;
     setSize();
 }
 
@@ -168,6 +169,10 @@ function maskOpacity() {
         event.target.innerHTML = `Mask Opacity ${opacityMask}`
     }
 
+}
+
+function maskBlend() {
+    const e = document.querySelector('.mask')
 }
 
 function imageSet() {

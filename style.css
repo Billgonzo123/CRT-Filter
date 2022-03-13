@@ -1,4 +1,6 @@
-
+html {
+  background-color: black;
+}
 
 .scanlines {
     z-index: 3;
@@ -8,7 +10,6 @@
     right: 0;
     width: 110%;
     height: 110%;
-   
     background-attachment: fixed;
 }
 
@@ -22,29 +23,33 @@
   background: url(./assets/img/RGBG.png);
   filter: contrast(100) brightness(10)  blur(1px);
   mix-blend-mode: darken;
-}
+
+  }
 
 /* individual phosphors. Enable these for the best phosphor seperation but with darker image */
 .R {
   z-index: 4;
   background: url(./assets/img/R.png);
-  filter:brightness(100);
   mix-blend-mode: darken;
+  image-rendering: pixelated;
 }
 
 .G {
   z-index: 4;
   background: url(./assets/img/G.png);
   mix-blend-mode: darken;
+  image-rendering: pixelated;
 }
 
 .B {
   z-index: 4;
   background: url(./assets/img/B.png);
   mix-blend-mode:darken;
+  image-rendering: pixelated;
 }
 
 .mask {
+  image-rendering: pixelated;
     z-index: 1;
     opacity: .3;
     position: absolute;
@@ -61,18 +66,18 @@
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0;
   width: 110%;
   height: 110%;
+  opacity: 0;
   mix-blend-mode:lighten;
   background-color: rgb(255, 255, 255);
-  animation: flickerEffect 33.332ms;
+  animation: flickerEffect 1ms;
   animation-iteration-count: infinite;
 }
 
 @keyframes flickerEffect {
   from {
-    opacity: .04;
+    opacity: .015;
     filter: blur(100px);
   }
 }
@@ -118,7 +123,6 @@ justify-content: flex-start;
   color: rgb(88, 76, 76);
 }
 .sizeDisplay{
-
   width:6vw;
   height: 1.2vw;
   font-size: 1vw;
