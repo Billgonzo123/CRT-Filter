@@ -18,34 +18,36 @@ html {
 
 /* RGB Bloom allows for a brighter image with blending between phosphors*/
 /* disabled until functional */
-.RGB-bloom {
+/* .RGB-bloom {
   z-index: 4;
   background: url(./assets/img/RGBG.png);
   filter: contrast(100) brightness(10)  blur(1px);
   mix-blend-mode: darken;
-
-  }
+  } */
 
 /* individual phosphors. Enable these for the best phosphor seperation but with darker image */
 .R {
   z-index: 4;
   background: url(./assets/img/R.png);
-  mix-blend-mode: darken;
   image-rendering: pixelated;
+  mix-blend-mode: darken;
+  
 }
 
 .G {
   z-index: 4;
   background: url(./assets/img/G.png);
-  mix-blend-mode: darken;
   image-rendering: pixelated;
+  mix-blend-mode:darken;
+
 }
 
 .B {
   z-index: 4;
   background: url(./assets/img/B.png);
-  mix-blend-mode:darken;
   image-rendering: pixelated;
+  mix-blend-mode:darken;
+
 }
 
 .mask {

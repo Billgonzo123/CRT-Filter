@@ -6,7 +6,7 @@ phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
 let opacityMask = .9;
 let testImageId = 0;
-let size = 12 * window.devicePixelRatio;
+let size = 300
 setSize();
 sizeDisplay.innerHTML = `Dot Size: ${size}`
 
@@ -88,7 +88,6 @@ function toggleDisplay(elClass) {
 
 function togglePhosphors(color) {
     const elements = document.querySelector(`.${color}`).children;
-    console.log(Object.values(elements))
     Object.values(elements).forEach(e => {
         f = e.className.split(' ')[1];
         console.log(f)
@@ -97,7 +96,6 @@ function togglePhosphors(color) {
             switch (color) {
                 case 'red':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Red.png)'
-
                     break;
                 case 'green':
                     document.querySelector(`.${f}`).style.background = 'url(./assets/img/Green.png)'
@@ -131,7 +129,7 @@ function resetAll() {
     mask.style.opacity = '';
     maskBtn.innerHTML = 'Mask Opacity';
     opacityMask = .9;
-    size = 12 * window.devicePixelRatio;;
+    Math.floor(12 / window.devicePixelRatio);
     setSize();
 }
 
