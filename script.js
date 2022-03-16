@@ -6,7 +6,7 @@ phosphorsContainer.style.display = 'block';
 let opacityValue = .9;
 let opacityMask = .9;
 let testImageId = 0;
-let size = 300
+let size = 200
 setSize();
 sizeDisplay.innerHTML = `Dot Size: ${size}`
 
@@ -129,7 +129,7 @@ function resetAll() {
     mask.style.opacity = '';
     maskBtn.innerHTML = 'Mask Opacity';
     opacityMask = .9;
-    Math.floor(12 / window.devicePixelRatio);
+    size = Math.floor(12 / window.devicePixelRatio);
     setSize();
 }
 
